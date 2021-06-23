@@ -19,3 +19,6 @@
 ### Go Patch ###
 /vendor/
 /Godeps/
+
+### JetBrains ###
+.idea/**
