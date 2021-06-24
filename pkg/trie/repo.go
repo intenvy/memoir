@@ -169,9 +169,9 @@ func (t *Repository) Inc(pattern string) error {
 		return key.NewErrKeyNotFound(*entry)
 	}
 	if entry.IsSelector() {
-		//       / (* should insert here)
+		//       / * increment here
 		//  node - child
-		//		 \ child
+		//       \ child
 		node.forceInitChild(key.SelectorChar)
 		child := node.children[key.SelectorChar]
 		child.value++
@@ -202,9 +202,9 @@ func (t *Repository) Contains(pattern string) bool {
 		return true
 	}
 	if entry.IsSelector() && node.hasChildren() {
-		//       / (* should insert here)
-		//  node - child
-		//		 \ child
+		//        / *
+		//  node  - child
+		//        \ child
 		return true
 	}
 	return false
